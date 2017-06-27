@@ -1,0 +1,21 @@
+<ion-menu side="left" [content]="mycontent" id="menu">
+    <!--<ion-header class="navbar">
+        <ion-navbar>
+            <ion-row id="menuRow">
+                <button left id="menuBtn" (click)="openMenu($event)">
+          <img src="assets/menu.png"/>
+        </button>
+
+                <ion-title>mimoBot</ion-title>
+            </ion-row>
+        </ion-navbar>
+    </ion-header>-->
+
+    <ion-content>
+        <ion-list no-lines>
+            <button menu-close *ngFor="let page of pages" [class.activeHighlight]="checkActive(page)" (click)="openPage(page)">{{page.name}}</button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>
